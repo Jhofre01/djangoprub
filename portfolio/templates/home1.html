@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+{% block content %} {% load static %}
+<header class="row bg-black">
+    <div class="col-md-4">
+        <img src="{% static 'perfil.jpeg' %}" alt="" width="90" height="90">
+    </div>
+    <div class="col-md-8 my-auto">
+        <h1>I am <strong>Jhofre Zambrano</strong></h1>
+        <h3>Full stack web developer</h3>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt, a eaque. Iusto repellat debitis 
+            mollitia optio. Consectetur molestias quaerat hic neque inventore, magnam officiis, explicabo, 
+            rem laborum dolore deleniti molestiae pariatur quas magni corporis eaque laudantium nemo eos 
+            laboriosam suscipit repudiandae reiciendis quo eligendi possimus? Non, excepturi.
+        </p>
+        <a class="btn btn-primary btn-lg rounded-0 my-3" href="{% static 'curriculum.pdf' %}" target="_blank">
+            Donwload CV
+        </a>
+    </div>
+</header>
+
+<div class="row my-4 text-center">
+    <h1>Mis proyectos</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores, necessitatibus?</p>
+    {% for project in projects %}
+    <div class="col-md-4 p-4">
+        <div class="card bg-black card-project">
+            <img src="{{project.image.url}}" alt="{{project.title}}" class="card-img-top">
+            <div class="card-body">
+                <h2>{{project.title}}</h2>
+                <p>{{project.description}}</p>
+
+                <br>
+                {% if project.url %}
+                    <a href="{{project.url}}" class="btn btn-light rounded-0 btn-sm" target="_blank">{{project.url}}</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}
+</div>
+

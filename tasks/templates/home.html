@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<main class="container py-5">
+    <section class="card card-body">
+        <h1 class="display-1 text-center">Django App</h1>
+        Una aplicacion que permite registrar usuarios, asignar tareas a los usuarios, y una libre gestion de estas, completandolas,eliminandolas y averiguando el estado de estas, si estan completadas o pendientes.
+        <div class="text-center">
+            <a class="btn btn-secondary" href="/signin/">
+                Signin
+            </a>
+            <a class="btn btn-dark" href="/signup/">
+                Signup
+            </a>
+        </div>
+    </section>
+</main>
+{% endblock %}
